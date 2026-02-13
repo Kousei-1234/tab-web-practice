@@ -1,0 +1,25 @@
+body {
+    font-family: Arial;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.tab-content {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
