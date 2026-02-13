@@ -2,28 +2,48 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>タブ練習</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-<div class="tabs">
-    <button onclick="showTab(1)">タブ1</button>
-    <button onclick="showTab(2)">タブ2</button>
-    <button onclick="showTab(3)">タブ3</button>
-</div>
+<header>
+    <h1>My Portfolio</h1>
+    <nav>
+        <a onclick="showTab(1)">Home</a>
+        <a onclick="showTab(2)">Works</a>
+        <a onclick="showTab(3)">Contact</a>
+    </nav>
+</header>
 
-<div id="tab1" class="tab-content">これはタブ1です</div>
-<div id="tab2" class="tab-content" style="display:none;">これはタブ2です</div>
-<div id="tab3" class="tab-content" style="display:none;">これはタブ3です</div>
+<section id="tab1" class="tab-content">
+    <h2>About Me</h2>
+    <p>情報系学生。Web開発を勉強中。</p>
+</section>
+
+<section id="tab2" class="tab-content" style="display:none;">
+    <h2>Works</h2>
+    <ul>
+        <li>Webシステム開発</li>
+        <li>アルゴリズム実装</li>
+    </ul>
+</section>
+
+<section id="tab3" class="tab-content" style="display:none;">
+    <h2>Contact</h2>
+    <form action="/contact" method="post">
+        <input type="text" name="name" placeholder="名前">
+        <textarea name="message" placeholder="メッセージ"></textarea>
+        <button type="submit">送信</button>
+    </form>
+</section>
 
 <script>
 function showTab(tabNumber) {
-    document.getElementById("tab1").style.display = "none";
-    document.getElementById("tab2").style.display = "none";
-    document.getElementById("tab3").style.display = "none";
-
-    document.getElementById("tab" + tabNumber).style.display = "block";
+    document.querySelectorAll(".tab-content")
+        .forEach(tab => tab.style.display = "none");
+    document.getElementById("tab" + tabNumber)
+        .style.display = "block";
 }
 </script>
 
